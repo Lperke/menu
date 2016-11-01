@@ -110,14 +110,7 @@ body.state-active-nav .menu {
     max-width: 100%;
 }
 
-body.state-active-nav .nav-overlay {
-    background: rgba(34, 34, 34, 0.5);
-    opacity: 1;
-    display: block;
-}
-  
 .nav-overlay {
-    display: none;
     position: fixed;
     z-index: 12;
     left: 0;
@@ -128,6 +121,11 @@ body.state-active-nav .nav-overlay {
     opacity: 0;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
+}
+
+body.state-active-nav .nav-overlay {
+    background: rgba(34, 34, 34, 0.5);
+    opacity: 1;
 }
 
 .nav-toogle {
