@@ -13,7 +13,7 @@
         });
 
         $(document).on('click', function (e) {  //close on click bg
-            if ($(window).width() < 786) {
+            if ($(window).width() <= 985) {
                 if (!$(e.target).hasClass('nav-section') && !$(e.target).parents().hasClass('nav-section')) {
                     $('.nav-toogle').removeClass('state-active');
                     $('body').removeClass('state-active-nav');
@@ -22,7 +22,7 @@
         });
 
         $(window).resize(function () {  //hide on resize
-            if ($(window).width() > 785) {
+            if ($(window).width() > 985) {
                 $('body').removeClass('state-active-nav');
                 $('.nav-toggle').removeClass('state-active');
             }
