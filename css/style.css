@@ -40,6 +40,7 @@ nav {
 body {
     color: #222222;
     font: bold 13px/26px sans-serif;
+	padding: 70px 0 0;
 }
 
 .wrapper {
@@ -67,10 +68,16 @@ body {
     right:0;
     height:70px;
 	color: #fff;
+	opacity: 1;
+	 -webkit-transition: background 0.3s ease;
+	transition: background 0.3s ease;
 }
 
+.nav.scrolled {
+	 background: rgba(38, 38, 38, 0.85);
+  }
+
 .menu {
-	overflow: auto;
     float: right;
 	padding: 8px 0;
 }
@@ -107,13 +114,73 @@ body.state-active-nav .menu {
     transition: all 0.6s ease;
 }
 
-.menu a.active:before,
+.menu .active a:before,
 .menu a:hover:before {
     width: 100%;
     left:0;
     right:0;
 	 -webkit-transition: all 0.3s ease;
 	transition: all 0.3s ease;
+}
+
+
+
+.has-children,
+ .has-children .sub-menu .has-children {
+  position: relative;
+}
+.has-children:hover .sub-menu,
+.has-children:focus .sub-menu,
+.has-children .sub-menu .has-children:hover .sub-sub-menu,
+.has-children .sub-menu .has-children:focus .sub-sub-menu {
+  display: block;
+}
+
+.has-children .sub-menu,
+.has-children .sub-menu .has-children .sub-sub-menu {
+		display: none;
+	  width: 170px;
+	  position: absolute;
+	  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+	  background: #f5f5f5;
+		top: 100%;
+	  left: 0;
+	  color: #999;
+	  font: 11px/14px sans-serif;
+	  text-align: left;
+	  z-index: 10;
+}
+
+.has-children .sub-menu .has-children .sub-sub-menu {
+  top: 0;
+  left: 100%;
+  z-index: 12;
+}
+
+.has-children .sub-menu:hover,
+.has-children .sub-menu:focus {
+  display: block;
+}
+.has-children .sub-menu li {
+  float: none;
+  border-top: 1px solid #f4f4f4;
+  margin: 0;
+}
+.has-children .sub-menu li:first-child {
+  border-top: 0;
+}
+.has-children .sub-menu li a {
+  padding: 20px;
+  width: 100%;
+  position: relative;
+}
+.has-children .sub-menu li a:hover {
+  background: #fafafa;
+  color: #111111;
+}
+.has-children .sub-menu li a:before,
+.has-children .sub-menu li a:hover:before {
+  display: none;
 }
 
 .logo {
@@ -177,6 +244,11 @@ body.state-active-nav .nav-overlay {
     border-bottom: none;
 }
 
+.content {
+	min-height: 800px;
+	padding: 20px 0;
+}
+
 
 .toShow800 {
     display: none;
@@ -193,7 +265,11 @@ body.state-active-nav .nav-overlay {
       width: 760px;
   }
   
-  .nav {
+  body {
+	   padding-top: 44px;
+	}
+	
+	.nav {
       height: 44px;
   }
   
@@ -234,5 +310,35 @@ body.state-active-nav .nav-overlay {
   
   .menu a:before {
       display: none;
+  }
+  
+  .has-children .sub-menu, 
+  .has-children .sub-menu .has-children .sub-sub-menu {
+	  width: 100%;
+		background: #333;
+		color: #999;
+		text-align: center;
+		font-size: 12px;
+		font-weight: 600;
+  }
+  
+  .has-children .sub-menu li {
+    border: none;
+  }
+  .has-children .sub-menu li a:hover,
+  .has-children .sub-menu li a:focus {
+    background: #333;
+    color: #8a8a8a;
+  }
+  
+  .has-children .sub-menu li.has-children .sub-sub-menu {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: #444;
+    color: #f5f5f5;
+    margin: 0;
   }
 }
